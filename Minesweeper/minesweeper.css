@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #F0FFFF;
+    padding-top: 100px;
+}
+
+.main {
+    text-align: center;
+    position: relative;
+}
+
+.minesweeper-game {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 650px;
+    height: 700px;
+}
+
+.tile {
+    position: relative;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    vertical-align: top;
+    border-style: ridge;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.tile__front, .tile__back {
+    height: 100%;
+    width: 100%;
+}
+
+.tile__front {
+    background: #1E90FF;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.tile__back {
+    display: flex;
+    font-size: 18px;
+    color: #F0FFF0;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    top: 0;
+    position: absolute;
+}
+
+.bomb--color{
+    background: #D3D3D3;
+}
+
+.empty--color{
+    background: #E6E6FA;
+}
+
+.tile--flip {
+    transform: rotateY(180deg);
+}
+
+.tile__photo {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+    position: absolute;
+    border: 2px solid #191919;
+}
+
+.minesweeper-game__game-over { 
+    display: inline-block; 
+    background: #E6E6FA; 
+    font-size: 30px;
+    margin: 20px; 
+    padding: 20px;
+    color: #000000; 
+    position: absolute;
+    left: 44%;
+    top: 46%;
+    margin-top: -50px;
+    z-index: 1;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px 8px #1E90FF, 10px 10px 8px #FF0000, 15px 15px
+ }
+
+.hide {
+    display: none;
+}
+
+button {
+    background: #DCDCDC;
+    border: 0;
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em 2em;
+    box-shadow: inset 0 0 0 2px #1E90FF;
+    color: #1E90FF;
+    font-size: inherit;
+    font-weight: 700;
+    position: relative;
+    vertical-align: middle;
+}
